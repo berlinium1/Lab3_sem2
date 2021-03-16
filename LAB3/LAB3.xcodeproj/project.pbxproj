@@ -10,6 +10,7 @@
 		C49CF71D26009E680059964F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C49CF71C26009E680059964F /* main.cpp */; };
 		C49CF72626009E820059964F /* functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C49CF72426009E820059964F /* functions.cpp */; };
 		C49CF72A26009E970059964F /* structures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C49CF72826009E970059964F /* structures.cpp */; };
+		C49CF735260112A40059964F /* hashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C49CF733260112A40059964F /* hashTable.cpp */; };
 		FF95C10C2601250A004EDA9C /* reading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FF95C10A2601250A004EDA9C /* reading.cpp */; };
 		C49CF735260112A40059964F /* hashTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C49CF733260112A40059964F /* hashTable.cpp */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,8 @@
 		C49CF72526009E820059964F /* functions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = functions.hpp; sourceTree = "<group>"; };
 		C49CF72826009E970059964F /* structures.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = structures.cpp; sourceTree = "<group>"; };
 		C49CF72926009E970059964F /* structures.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = structures.hpp; sourceTree = "<group>"; };
+		C49CF733260112A40059964F /* hashTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hashTable.cpp; sourceTree = "<group>"; };
+		C49CF734260112A40059964F /* hashTable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = hashTable.hpp; sourceTree = "<group>"; };
 		FF95C10A2601250A004EDA9C /* reading.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = reading.cpp; sourceTree = "<group>"; };
 		FF95C10B2601250A004EDA9C /* reading.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = reading.hpp; sourceTree = "<group>"; };
 		C49CF733260112A40059964F /* hashTable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = hashTable.cpp; sourceTree = "<group>"; };
@@ -140,6 +143,7 @@
 			files = (
 				C49CF71D26009E680059964F /* main.cpp in Sources */,
 				C49CF72626009E820059964F /* functions.cpp in Sources */,
+				C49CF735260112A40059964F /* hashTable.cpp in Sources */,
 				FF95C10C2601250A004EDA9C /* reading.cpp in Sources */,
 				C49CF735260112A40059964F /* hashTable.cpp in Sources */,
 				C49CF72A26009E970059964F /* structures.cpp in Sources */,

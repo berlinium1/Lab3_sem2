@@ -14,7 +14,8 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-
+    hashTable table;
+    return 0;
 }
 
 /*
