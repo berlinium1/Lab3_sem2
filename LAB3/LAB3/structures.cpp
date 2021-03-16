@@ -14,13 +14,14 @@ ListElement::ListElement(int a, ListElement *p) {
     pointer = p;
 }
 
-//void ListElement::set (int a) {
-//    value = a;
-//}
 
 
 
-List::List (int a) {
+List::List () {
+    
+}
+
+void List::addFirstElem (int a) {
     firstElem.value = a;
     firstElem.pointer = NULL;
 }

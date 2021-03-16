@@ -20,7 +20,8 @@ struct ListElement {
 
 struct List{
     ListElement firstElem;
-    List (int a);
+    List ();
+    void addFirstElem (int a);
     void addElem (int a);
     int get (int n);
 };
