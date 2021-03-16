@@ -16,22 +16,23 @@ void toLittle (string *s) {
     *s = sdop;
 }
 
-void readingFile (string teka) {
+void readingFile (string teka, hashTable *mas) {
     ///Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt
+    hashTable res;
     ifstream inFile;
     inFile.open(teka);
     string line;
-    string word;
-    string explanation;
+    word word;
     while (!inFile.eof()) {
-        word="";
+        word.key="";
         getline(inFile,line,'\n');
         int i;
         for (i = 0; line[i] != ';'; i++) {
-            word = word + line[i];
+            word.key = word.key + line[i];
         }
-        explanation = line.substr(i+1,line.size());
-        toLittle(&word);
-        cout << word << endl;
+        word.definition = line.substr(i+1,line.size());
+        toLittle(&word.key);
+        res.push_back(word);
     }
+    *mas = res;
 }

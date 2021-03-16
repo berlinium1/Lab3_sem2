@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include "structures.hpp"
+#include "hashTable.hpp"
 using namespace std;
 
 void readingFile (string teka);
