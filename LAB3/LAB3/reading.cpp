@@ -11,9 +11,18 @@ void toLittle (string *s) {
     string sdop;
     sdop = *s;
     for (int i=0; i<sdop.size(); i++) {
-        sdop[i] = sdop[i] + 32;
+        if ((sdop[i]>=65) && (sdop[i]<=90)) {
+            sdop[i] = sdop[i] + 32;
+        }
     }
     *s = sdop;
+}
+
+string readingCons () {
+    string sentence;
+    getline(cin,sentence);
+    toLittle(&sentence);
+    return sentence;
 }
 
 void readingFile (string teka, hashTable *mas) {
