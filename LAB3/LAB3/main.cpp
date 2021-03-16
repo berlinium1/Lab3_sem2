@@ -8,13 +8,11 @@
 #include <iostream>
 #include "functions.hpp"
 #include "structures.hpp"
+#include "reading.hpp"
 
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    List m;
-    m.addElem(3);
-    m.addElem(4);
-    cout << m.get(2);
+    readingFile("/Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt");
     return 0;
 }
