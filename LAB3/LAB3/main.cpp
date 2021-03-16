@@ -14,6 +14,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     List m(2);
     m.addElem(3);
-    cout << m.get(1);
+    m.addElem(4);
+    cout << m.get(2);
     return 0;
 }

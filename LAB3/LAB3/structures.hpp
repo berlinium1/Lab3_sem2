@@ -19,7 +19,7 @@ struct ListElement {
 };
 
 struct List{
-    ListElement *firstElem;
+    ListElement firstElem;
     List (int a);
     void addElem (int a);
     int get (int n);

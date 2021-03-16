@@ -21,22 +21,23 @@ ListElement::ListElement(int a, ListElement *p) {
 
 
 List::List (int a) {
-    ListElement dop (a, NULL);
-    firstElem = &dop;
+    firstElem.value = a;
+    firstElem.pointer = NULL;
 }
 
 void List::addElem (int a) {
-    ListElement *p = firstElem;
-    int aa = p->value;
-    ListElement* pp =p->pointer;
-    //p = firstElem;
-    firstElem = new ListElement(a, p);
-    p->value = aa;
-    p->pointer = pp;
+    ListElement *movingElem = &firstElem;
+    while (movingElem->pointer != NULL) {
+        movingElem = movingElem->pointer;
+    }
+    ListElement *newElement = new ListElement;
+    newElement->value = a;
+    newElement->pointer = NULL;
+    movingElem->pointer = newElement;
 }
 
 int List::get (int n) {
-    ListElement *movingElem = firstElem;
+    ListElement *movingElem = &firstElem;
     for (int i=0; i<n; i++) {
         movingElem = movingElem->pointer;
     }
