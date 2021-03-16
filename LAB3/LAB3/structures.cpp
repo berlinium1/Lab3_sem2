@@ -26,9 +26,13 @@ List::List (int a) {
 }
 
 void List::addElem (int a) {
-    ListElement *p;
-    p = firstElem;
+    ListElement *p = firstElem;
+    int aa = p->value;
+    ListElement* pp =p->pointer;
+    //p = firstElem;
     firstElem = new ListElement(a, p);
+    p->value = aa;
+    p->pointer = pp;
 }
 
 int List::get (int n) {
