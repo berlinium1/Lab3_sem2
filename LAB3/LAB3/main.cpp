@@ -10,6 +10,8 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
+    Table a;
+    cout<<a.size;
+    a.tableOutput();
     return 0;
 }

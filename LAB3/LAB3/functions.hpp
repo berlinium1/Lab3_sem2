@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <stdio.h>
+#include "structures.hpp"
 
 using namespace std;
 
