@@ -7,6 +7,15 @@
 
 #include "reading.hpp"
 
+void toLittle (string *s) {
+    string sdop;
+    sdop = *s;
+    for (int i=0; i<sdop.size(); i++) {
+        sdop[i] = sdop[i] + 32;
+    }
+    *s = sdop;
+}
+
 void readingFile (string teka) {
     ///Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt
     ifstream inFile;
@@ -22,6 +31,7 @@ void readingFile (string teka) {
             word = word + line[i];
         }
         explanation = line.substr(i+1,line.size());
-        
+        toLittle(&word);
+        cout << word << endl;
     }
 }
