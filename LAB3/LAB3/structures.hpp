@@ -13,6 +13,8 @@
 struct ListElement {
     int value;
     ListElement* pointer;
+    ListElement ();
+    ListElement (int a, ListElement *p);
 };
 
 struct List{

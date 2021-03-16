@@ -7,33 +7,26 @@
 
 #include "structures.hpp"
 
-struct ListElement {
-    int value;
-    ListElement* pointer;
-    ListElement () {}
-    ListElement (int a) {
-        value = a;
-    }
-    ListElement (int a, ListElement *p) {
-        value = a;
-        pointer = p;
-    }
-};
+ListElement::ListElement() {}
 
-struct List {
-    ListElement firstElem;
-    List (int a) {
-        firstElem.value = a;
-        firstElem.pointer = NULL;
+ListElement::ListElement(int a, ListElement *p) {
+    value = a;
+    pointer = p;
+}
+
+List::List (int a) {
+    firstElem.value = a;
+    firstElem.pointer = NULL;
+}
+
+void List::addElem (int a) {
+    firstElem = *new ListElement(a, &firstElem);
+}
+
+int List::get (int n) {
+    ListElement movingElem = firstElem;
+    for (int i=0; i<=n; i++) {
+        movingElem = *movingElem.pointer;
     }
-    void addElem (int a) {
-        firstElem = *new ListElement(a, &firstElem);
-    }
-    int get (int n) {
-        ListElement movingElem = firstElem;
-        for (int i=0; i<=n; i++) {
-            movingElem = *movingElem.pointer;
-        }
-        return movingElem.value;
-    }
-};
+    return movingElem.value;
+}
