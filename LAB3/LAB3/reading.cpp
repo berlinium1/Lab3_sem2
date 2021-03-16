@@ -30,7 +30,7 @@ void readingFile (string teka, hashTable *mas, int *size) { //функция с�
     hashTable res;
     int count = 0;
     ifstream inFile;
-    inFile.open(teka);
+    inFile.open("/Users/yaroslav/Desktop/Lab3_sem2/files/dict_processed.txt");
     string line;
     word word;
     if (inFile.is_open()) {

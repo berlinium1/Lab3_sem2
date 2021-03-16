@@ -19,6 +19,10 @@ int main(int argc, const char * argv[]) {
     vector<string> userSentenseWords;
     cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
     userSentenseWords = getWordFromSentense(userSentense);
+    for (int i = 0; i<userSentenseWords.size(); i++) {
+        table.find(userSentenseWords[i]);
+        cout<<userSentenseWords[i]
+    }
     return 0;
 }
 
