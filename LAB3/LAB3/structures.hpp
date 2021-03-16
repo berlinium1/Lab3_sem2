@@ -27,7 +27,7 @@ struct ListElement {
 
 struct List{
     ListElement firstElem;
-    List ();
+    List();
     void addFirstElem (word a);
     void addElem (word a);
     word get(int n);

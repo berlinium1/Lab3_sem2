@@ -25,7 +25,8 @@ List::List () {
 }
 
 void List::addFirstElem (word a) {
-    firstElem.value = a;
+    firstElem.value.key = a.key;
+    firstElem.value.definition = a.definition;
     firstElem.pointer = NULL;
 }
 

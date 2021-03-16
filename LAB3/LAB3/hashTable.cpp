@@ -28,5 +28,5 @@ word hashTable::find(word term){
 
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
-    linkedList[generatedHash].addElem(definition);
+    linkedList[generatedHash].addFirstElem(definition);
 }

@@ -13,9 +13,8 @@
 #include "structures.hpp"
 
 struct hashTable{
-    List *linkedList;
     int size;
-    
+    List *linkedList;
     hashTable();
     int generateHash(string word);
     void push_back(word definition);
