@@ -9,6 +9,9 @@
 #define structures_hpp
 
 #include <stdio.h>
+#include <string>
+
+using namespace std;
 
 struct ListElement {
     int value;
@@ -31,25 +34,8 @@ struct word{
     string definition;
 };
 
-struct listElement{
-    int value;
-    listElement* pointer;
-};
-
-struct List{
-    listElement firstElem;
-    List(int a);
-    void addElem(int a);
-    int get(int n);
-};
-
-
-
-
-
-
 struct Table{
-    listElement** list;
+    ListElement** list;
     int size = 98215;
     
 public:

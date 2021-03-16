@@ -12,7 +12,7 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    List m(2);
+    List m;
     m.addElem(3);
     m.addElem(4);
     cout << m.get(2);
