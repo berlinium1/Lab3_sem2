@@ -9,7 +9,6 @@
 
 
 hashTable::hashTable(){
-    linkedList = new List[size];
 };
 
 int hashTable::generateHash(string word){
@@ -17,7 +16,7 @@ int hashTable::generateHash(string word){
         for(int i = 0; i < word.size(); i++){
             hash = (31 * hash + static_cast<int>(word[i])) % 98215;
         }
-        return hash;
+        return 352;
 }
 
 word hashTable::find(word term){
@@ -28,5 +27,13 @@ word hashTable::find(word term){
 
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
-    linkedList[generatedHash].addFirstElem(definition);
+    if (linkedList[generatedHash].firstElem.value.key == "") {
+        linkedList[generatedHash].addFirstElem(definition);
+    }
+    else{
+        linkedList[generatedHash].addElem(definition);
+    }
 }
+
+
+

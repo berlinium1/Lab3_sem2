@@ -28,6 +28,7 @@ void List::addFirstElem (word a) {
     firstElem.value.key = a.key;
     firstElem.value.definition = a.definition;
     firstElem.pointer = NULL;
+    number++;
 }
 
 void List::addElem (word a) {
@@ -39,6 +40,7 @@ void List::addElem (word a) {
     newElement->value = a;
     newElement->pointer = NULL;
     movingElem->pointer = newElement;
+    number++;
 }
 
 word List::get (int n) {

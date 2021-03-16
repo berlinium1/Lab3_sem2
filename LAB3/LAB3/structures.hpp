@@ -13,8 +13,8 @@
 using namespace std;
 
 struct word{
-    string key;
-    string definition;
+    string key = "";
+    string definition = "";
 };
 
 struct ListElement {
@@ -28,20 +28,10 @@ struct ListElement {
 struct List{
     ListElement firstElem;
     List();
+    int number = 0;
     void addFirstElem (word a);
     void addElem (word a);
     word get(int n);
-};
-
-struct Table{
-    ListElement** list;
-    int size = 98215;
-    
-public:
-    
-    Table();
-    int getHash(string key);
-    void tableOutput();
 };
 
 

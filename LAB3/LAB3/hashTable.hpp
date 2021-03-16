@@ -13,12 +13,14 @@
 #include "structures.hpp"
 
 struct hashTable{
-    int size;
-    List *linkedList;
+    int size = 98215;
+    List *linkedList = new List[size];;
     hashTable();
     int generateHash(string word);
     void push_back(word definition);
     word find(word term);
+    void output();
+    
 
 };
 
