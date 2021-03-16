@@ -16,14 +16,14 @@ int hashTable::generateHash(string word){
         for(int i = 0; i < word.size(); i++){
             hash = (31 * hash + static_cast<int>(word[i])) % 98215;
         }
-        return 352;
+        return hash;
 }
-
+/*
 word hashTable::find(word term){
     int index = generateHash(term.key);
     return linkedList[index].get(index);
 }
-
+*/
 
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
@@ -51,3 +51,22 @@ void hashTable::output(){
         }
     }
 }
+
+void hashTable::find(string term){
+    int currentHash = generateHash(term);
+    if (linkedList[currentHash].firstElem.value.key == "") {
+        cout<<"This dictionary doesn't contain the word you've asked\n";
+    }
+    else{
+        int counter = 0;
+        while (counter<linkedList[currentHash].number) {
+            if (linkedList[currentHash].get(counter).key == term) {
+                cout<<"Definition is: "<<linkedList[currentHash].get(counter).definition<<endl;
+                break;
+            }
+            else counter++;
+            }
+            counter = 0;
+        }
+    
+};

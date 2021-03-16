@@ -14,5 +14,6 @@
 using namespace std;
 
 void readingFile (string teka);
+void toLittle (string *);
 
 #endif /* reading_hpp */

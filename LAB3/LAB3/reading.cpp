@@ -16,7 +16,7 @@ void toLittle (string *s) {
     *s = sdop;
 }
 
-void readingFile (string teka) {
+int readingFile (string teka, int *lines) {
     ///Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt
     ifstream inFile;
     inFile.open(teka);
@@ -34,4 +34,5 @@ void readingFile (string teka) {
         toLittle(&word);
         cout << word << endl;
     }
+    return *lines;
 }
