@@ -36,4 +36,18 @@ void hashTable::push_back(word definition){
 }
 
 
-
+void hashTable::output(){
+    for (int i = 0; i < size; i++) {
+        if (linkedList[i].firstElem.value.key != "") {
+            int counter = 0;
+            while (counter<linkedList[i].number) {
+                cout<<"Key is: "<<linkedList[i].get(counter).key<<endl;
+                cout<<"Definition is "<<linkedList[i].get(counter).definition<<endl;
+                counter++;
+            }
+            counter = 0;
+        }
+        else{
+        }
+    }
+}
