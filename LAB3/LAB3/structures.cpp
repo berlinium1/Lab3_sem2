@@ -14,19 +14,27 @@ ListElement::ListElement(int a, ListElement *p) {
     pointer = p;
 }
 
+//void ListElement::set (int a) {
+//    value = a;
+//}
+
+
+
 List::List (int a) {
-    firstElem.value = a;
-    firstElem.pointer = NULL;
+    ListElement dop (a, NULL);
+    firstElem = &dop;
 }
 
 void List::addElem (int a) {
-    firstElem = *new ListElement(a, &firstElem);
+    ListElement *p;
+    p = firstElem;
+    firstElem = new ListElement(a, p);
 }
 
 int List::get (int n) {
-    ListElement movingElem = firstElem;
-    for (int i=0; i<=n; i++) {
-        movingElem = *movingElem.pointer;
+    ListElement *movingElem = firstElem;
+    for (int i=0; i<n; i++) {
+        movingElem = movingElem->pointer;
     }
-    return movingElem.value;
+    return movingElem->value;
 }

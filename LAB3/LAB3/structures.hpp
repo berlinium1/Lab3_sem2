@@ -15,10 +15,11 @@ struct ListElement {
     ListElement* pointer;
     ListElement ();
     ListElement (int a, ListElement *p);
+    //void set (int a);
 };
 
 struct List{
-    ListElement firstElem;
+    ListElement *firstElem;
     List (int a);
     void addElem (int a);
     int get (int n);
