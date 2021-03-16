@@ -14,7 +14,11 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
+    hashTable table;
+    string userSentense;
+    vector<string> userSentenseWords;
+    cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
+    userSentenseWords = getWordFromSentense(userSentense);
     return 0;
 }
 
