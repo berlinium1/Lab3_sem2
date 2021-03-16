@@ -12,7 +12,7 @@
 
 ListElement::ListElement() {}
 
-ListElement::ListElement(int a, ListElement *p) {
+ListElement::ListElement(word a, ListElement *p) {
     value = a;
     pointer = p;
 }
@@ -24,12 +24,12 @@ List::List () {
     
 }
 
-void List::addFirstElem (int a) {
+void List::addFirstElem (word a) {
     firstElem.value = a;
     firstElem.pointer = NULL;
 }
 
-void List::addElem (int a) {
+void List::addElem (word a) {
     ListElement *movingElem = &firstElem;
     while (movingElem->pointer != NULL) {
         movingElem = movingElem->pointer;
@@ -40,7 +40,7 @@ void List::addElem (int a) {
     movingElem->pointer = newElement;
 }
 
-int List::get (int n) {
+word List::get (int n) {
     ListElement *movingElem = &firstElem;
     for (int i=0; i<n; i++) {
         movingElem = movingElem->pointer;
