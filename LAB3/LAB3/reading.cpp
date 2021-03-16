@@ -15,12 +15,13 @@ void readingFile (string teka) {
     string word;
     string explanation;
     while (!inFile.eof()) {
-        getline(inFile,line);
+        word="";
+        getline(inFile,line,'\n');
         int i;
         for (i = 0; line[i] != ';'; i++) {
             word = word + line[i];
         }
         explanation = line.substr(i+1,line.size());
-        cout << word << endl;
+        
     }
 }
