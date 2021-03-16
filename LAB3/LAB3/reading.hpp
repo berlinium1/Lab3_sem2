@@ -15,7 +15,8 @@
 #include "hashTable.hpp"
 using namespace std;
 
-void readingFile (string teka);
+void readingFile (string teka, hashTable *mas, int *size);
 void toLittle (string *);
+string readingCons ();
 
 #endif /* reading_hpp */

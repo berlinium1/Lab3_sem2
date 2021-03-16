@@ -17,7 +17,7 @@ struct word{
     string definition = "";
 };
 
-struct ListElement {
+struct ListElement { //структура в которой хранится значение елемента и указатель на следущий
     word value;
     ListElement* pointer;
     ListElement ();
@@ -25,7 +25,7 @@ struct ListElement {
     //void set (int a);
 };
 
-struct List{
+struct List{ //структура связного списка
     ListElement firstElem;
     List();
     int number = 0;
