@@ -13,6 +13,6 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
+    readingFile("/Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt");
     return 0;
 }

@@ -9,5 +9,10 @@
 #define reading_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void readingFile (string teka);
 
 #endif /* reading_hpp */
