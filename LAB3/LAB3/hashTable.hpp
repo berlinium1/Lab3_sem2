@@ -18,10 +18,8 @@ struct hashTable{
     hashTable();
     int generateHash(string word);
     void push_back(word definition);
-    word find(word term);
     void output();
-    
-
+    void find(string term);
 };
 
 
