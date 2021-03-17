@@ -25,12 +25,12 @@ string readingCons () { //функция чтения с консоли
     return sentence;
 }
 
-void readingFile (string teka, hashTable *mas, int *size) { //функция считывания словаря
+void readingFile (string teka, hashTable *mas) { //функция считывания словаря
     ///Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt
     hashTable res;
     int count = 0;
     ifstream inFile;
-    inFile.open("/Users/yaroslav/Desktop/Lab3_sem2/files/dict_processed.txt");
+    inFile.open(teka);
     string line;
     word word;
     if (inFile.is_open()) {
@@ -47,8 +47,7 @@ void readingFile (string teka, hashTable *mas, int *size) { //функция с�
             res.push_back(word); //добавляем в таблицу
         }
     } else {
-        cout << "file isnt open";
+        cout << "File couldn't be opened\n";
     }
-    *size = count;
     *mas = res;
 }

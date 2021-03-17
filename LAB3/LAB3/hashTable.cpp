@@ -76,3 +76,18 @@ void hashTable::find(string term){
         }
     
 };
+
+void hashTable::calculateColisions(){
+        int array[size];
+        int max = array[0];
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            array[i] = linkedList[i].number;
+            cout<<array[i]<<endl;
+            if (array[i] > max) {
+                max = array[i];
+            }
+            sum += array[i];
+        }
+    cout<<"Max is "<<max<<endl;        
+}

@@ -20,6 +20,7 @@ struct hashTable{
     void push_back(word definition);
     void output();
     void find(string term);
+    void calculateColisions();
 };
 
 
