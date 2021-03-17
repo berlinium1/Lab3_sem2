@@ -10,7 +10,7 @@
 
 hashTable::hashTable(){
 };
-
+///при генерации хеша лучше учитывать умножение на простое число, что делает полученные хеши более разнообразными
 int hashTable::generateHash(string word){
         int hash = 0;
         for(int i = 0; i < word.size(); i++){
@@ -18,12 +18,6 @@ int hashTable::generateHash(string word){
         }
         return hash;
 }
-/*
-word hashTable::find(word term){
-    int index = generateHash(term.key);
-    return linkedList[index].get(index);
-}
-*/
 
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
@@ -61,6 +55,7 @@ void hashTable::find(string term){
     else{
         int counter = 0;
         bool flag = 0;
+        /// двигаемся в конец списка
         while (counter<linkedList[currentHash].number) {
             if (linkedList[currentHash].get(counter).key == term) {
                 cout<<linkedList[currentHash].get(counter).key<<";"<<linkedList[currentHash].get(counter).definition<<endl;
@@ -69,6 +64,7 @@ void hashTable::find(string term){
             }
             else counter++;
             }
+        ///  для случая, если хеш оказался одинаковым, но слово найдено не было среди остальных
         if (flag == 0) {
             cout<<"The word ["<<term<<"] couldn't be found it the dictionary\n";
             cout<<"Your hash is "<<currentHash<<endl;
@@ -83,7 +79,7 @@ void hashTable::calculateColisions(){
         int sum = 0;
         for (int i = 0; i < size; i++) {
             array[i] = linkedList[i].number;
-            cout<<array[i]<<endl;
+            //cout<<array[i]<<endl;
             if (array[i] > max) {
                 max = array[i];
             }

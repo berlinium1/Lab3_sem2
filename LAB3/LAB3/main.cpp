@@ -20,7 +20,8 @@ int main(int argc, const char * argv[]) {
     getline(cin, path);
     readingFile(path, &table);
     string userSentense;
-    vector<string> userSentenseWords;
+    vector<string> userSentenseWords; // контейнер для ввёденных пользователем слов
+    
     do {
     cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
     userSentenseWords = getWordFromSentense(userSentense);
