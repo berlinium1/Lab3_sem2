@@ -13,13 +13,14 @@
 #include "structures.hpp"
 
 struct hashTable{
-    int size = 98215;
-    List *linkedList = new List[size];;
+    int size = 98215; 
+    List *linkedList = new List[size];  //хеш-таблица является массивом связных списков
     hashTable();
     int generateHash(string word);
-    void push_back(word definition);
-    void output();
-    void find(string term);
+    void push_back(word definition);  // вставить в конец связанного списка
+    void output();                 // вывод хеш-таблицы
+    void find(string term);    // найти указанное слово в хеш-таблице
+    void calculateColisions(); // подсчёт количества коллизий
 };
 
 

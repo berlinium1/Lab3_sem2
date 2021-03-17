@@ -10,7 +10,7 @@
 
 hashTable::hashTable(){
 };
-
+///при генерации хеша лучше учитывать умножение на простое число, что делает полученные хеши более разнообразными
 int hashTable::generateHash(string word){
         int hash = 0;
         for(int i = 0; i < word.size(); i++){
@@ -18,12 +18,6 @@ int hashTable::generateHash(string word){
         }
         return hash;
 }
-/*
-word hashTable::find(word term){
-    int index = generateHash(term.key);
-    return linkedList[index].get(index);
-}
-*/
 
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
@@ -55,18 +49,41 @@ void hashTable::output(){
 void hashTable::find(string term){
     int currentHash = generateHash(term);
     if (linkedList[currentHash].firstElem.value.key == "") {
-        cout<<"This dictionary doesn't contain the word you've asked\n";
+        cout<<"The word ["<<term<<"] couldn't be found it the dictionary\n";
+        cout<<"Your hash is "<<currentHash<<endl;
     }
     else{
         int counter = 0;
+        bool flag = 0;
+        /// двигаемся в конец списка
         while (counter<linkedList[currentHash].number) {
             if (linkedList[currentHash].get(counter).key == term) {
-                cout<<"Definition is: "<<linkedList[currentHash].get(counter).definition<<endl;
+                cout<<linkedList[currentHash].get(counter).key<<";"<<linkedList[currentHash].get(counter).definition<<endl;
+                flag = 1;
                 break;
             }
             else counter++;
             }
-            counter = 0;
+        ///  для случая, если хеш оказался одинаковым, но слово найдено не было среди остальных
+        if (flag == 0) {
+            cout<<"The word ["<<term<<"] couldn't be found it the dictionary\n";
+            cout<<"Your hash is "<<currentHash<<endl;
+        }
         }
     
 };
+
+void hashTable::calculateColisions(){
+        int array[size];
+        int max = array[0];
+        int sum = 0;
+        for (int i = 0; i < size; i++) {
+            array[i] = linkedList[i].number;
+            //cout<<array[i]<<endl;
+            if (array[i] > max) {
+                max = array[i];
+            }
+            sum += array[i];
+        }
+    cout<<"Max is "<<max<<endl;        
+}
