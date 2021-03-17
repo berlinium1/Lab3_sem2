@@ -55,19 +55,24 @@ void hashTable::output(){
 void hashTable::find(string term){
     int currentHash = generateHash(term);
     if (linkedList[currentHash].firstElem.value.key == "") {
-        cout<<"This dictionary doesn't contain the word you've asked\n";
+        cout<<"The word ["<<term<<"] couldn't be found it the dictionary\n";
         cout<<"Your hash is "<<currentHash<<endl;
     }
     else{
         int counter = 0;
+        bool flag = 0;
         while (counter<linkedList[currentHash].number) {
             if (linkedList[currentHash].get(counter).key == term) {
-                cout<<"Definition is: "<<linkedList[currentHash].get(counter).definition<<endl;
+                cout<<linkedList[currentHash].get(counter).key<<";"<<linkedList[currentHash].get(counter).definition<<endl;
+                flag = 1;
                 break;
             }
             else counter++;
             }
-            counter = 0;
+        if (flag == 0) {
+            cout<<"The word ["<<term<<"] couldn't be found it the dictionary\n";
+            cout<<"Your hash is "<<currentHash<<endl;
+        }
         }
     
 };
