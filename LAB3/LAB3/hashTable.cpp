@@ -56,6 +56,7 @@ void hashTable::find(string term){
     int currentHash = generateHash(term);
     if (linkedList[currentHash].firstElem.value.key == "") {
         cout<<"This dictionary doesn't contain the word you've asked\n";
+        cout<<"Your hash is "<<currentHash<<endl;
     }
     else{
         int counter = 0;

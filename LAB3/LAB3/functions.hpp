@@ -14,5 +14,5 @@
 using namespace std;
 
 vector<string> getWordFromSentense(string);
-
+int generateHash(string word);
 #endif /* functions_hpp */

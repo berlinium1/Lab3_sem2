@@ -15,14 +15,18 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     hashTable table;
+    int one;
+    readingFile("/Users/yaroslav/Desktop/Lab3_sem2/files/dict_processed.txt", &table, &one);
     string userSentense;
     vector<string> userSentenseWords;
     cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
     userSentenseWords = getWordFromSentense(userSentense);
     for (int i = 0; i<userSentenseWords.size(); i++) {
         table.find(userSentenseWords[i]);
-        cout<<userSentenseWords[i]
+        cout<<"hash1 - "<<generateHash(userSentenseWords[i]);
     }
+    
+    table.output();
     return 0;
 }
 
