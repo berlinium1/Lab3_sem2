@@ -17,9 +17,9 @@ class hashTable{
     int engagedCells;
 public:
     int size;
-    hashTable(int lenght){
+    hashTable(){
         engagedCells = 0;
-        size = lenght;
+        size = 98215;
         cout<<"New table of size "<<size<<" was created. Engaged cells are: "<<engagedCells<<"\n";
         linkedList = new List[size];
     };
@@ -46,7 +46,6 @@ public:
         size *= 2;
         linkedList = new List[size];
         engagedCells = 0;
-       //linkedList = new List[size];
     }
     int generateHash(string word);
     void push_back(word definition);  // вставить в конец связанного списка

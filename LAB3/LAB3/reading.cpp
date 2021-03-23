@@ -26,7 +26,7 @@ string readingCons () { //функция чтения с консоли
 }
 
 void readingFile (string teka, hashTable *mas) { //функция считывания словаря
-    hashTable res(10000);
+    hashTable res;
     int count = 0;
     ifstream inFile;
     inFile.open(teka);

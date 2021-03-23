@@ -14,7 +14,7 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    hashTable table(10000);
+    hashTable table;
     string path;
     cout<<"To start searching determinations You should give me a path to a dictionary-file\n";
     getline(cin, path);
