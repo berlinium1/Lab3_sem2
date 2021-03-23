@@ -26,7 +26,6 @@ string readingCons () { //функция чтения с консоли
 }
 
 void readingFile (string teka, hashTable *mas) { //функция считывания словаря
-    ///Users/khramchenko/Desktop/Reps/Lab3_sem2/files/dict_processed.txt
     hashTable res;
     int count = 0;
     ifstream inFile;
@@ -46,7 +45,9 @@ void readingFile (string teka, hashTable *mas) { //функция считыва
             toLittle(&word.key);
             res.push_back(word); //добавляем в таблицу
         }
-    } else {
+        inFile.close();
+    }
+    else {
         cout << "File couldn't be opened\n";
     }
     *mas = res;
