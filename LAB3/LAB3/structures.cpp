@@ -51,3 +51,14 @@ word List::get (int n) { //получения елемента с любым и�
     }
     return movingElem->value;
 }
+
+void List::clear() {
+    delElem(&firstElem);
+}
+
+void List::delElem(ListElement *elem) {
+    if (elem->pointer != NULL) {
+        delElem(elem->pointer);
+    }
+    delete elem;
+}

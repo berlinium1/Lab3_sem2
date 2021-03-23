@@ -32,6 +32,7 @@ struct List{ //структура связного списка
     void addFirstElem (word a);
     void addElem (word a);
     void clear();
+    void delElem(ListElement *elem);
     word get(int n);
 };
 

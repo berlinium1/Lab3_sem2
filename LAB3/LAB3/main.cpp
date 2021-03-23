@@ -23,13 +23,22 @@ int main(int argc, const char * argv[]) {
     vector<string> userSentenseWords; // контейнер для ввёденных пользователем слов
     
     do {
+<<<<<<< Updated upstream
         cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
+=======
+        cout<<"Enter your sentense or just a phrase please: ";
+        getline(cin, userSentense);
+>>>>>>> Stashed changes
         userSentenseWords = getWordFromSentense(userSentense);
         for (int i = 0; i<userSentenseWords.size(); i++) {
             toLittle(&userSentenseWords[i]);
             table.find(userSentenseWords[i]);
         }
+<<<<<<< Updated upstream
     }while (userSentense != "");
+=======
+    } while (userSentense != "");
+>>>>>>> Stashed changes
     
 
     table.calculateColisions();
