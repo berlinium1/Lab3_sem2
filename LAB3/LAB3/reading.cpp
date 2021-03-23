@@ -35,11 +35,11 @@ void readingFile (string teka, hashTable *mas) { //функция считыва
     int i = 0;
     if (inFile.is_open()) {
         while (!inFile.eof()) {
-            if (res.is_overloaded()) {
+            if (res.is_overloaded()) {   // если таблица переполнена, открываем файл по новой
                 inFile.close();
                 inFile.open(teka);
-                res.resize();
-                cout<<i<<" - "<<res.size<<endl;
+                res.clear();    // очищаем указатели на старые значения
+                res.resize();   // пересобираем таблицу
             }
             i++;
             count++;

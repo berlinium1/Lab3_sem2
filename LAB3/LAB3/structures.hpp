@@ -21,14 +21,12 @@ struct ListElement { //структура в которой хранится з�
     word value;
     ListElement* pointer;
     ListElement ();
-    ListElement (word a, ListElement *p);
-    //void set (int a);
 };
 
 class List{ //клас связного списка
-    ListElement firstElem;
-    void delElem(ListElement *elem);
 public:
+    void delElem(ListElement *elem);
+    ListElement firstElem;
     List();
     int number = 0;
     void addFirstElem (word a);

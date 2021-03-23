@@ -8,6 +8,18 @@
 #include "hashTable.hpp"
 
 
+//=====Конструктор
+hashTable::hashTable(){
+    engagedCells = 0;
+    size = 8192;
+    linkedList = new List[size];
+};
+
+int hashTable::getSize(){
+    return size;
+}
+
+//=====Генератор хешей=====
 ///при генерации хеша лучше учитывать умножение на простое число, что делает полученные хеши более разнообразными
 int hashTable::generateHash(string word){
         int hash = 0;
@@ -17,25 +29,55 @@ int hashTable::generateHash(string word){
         return hash;
 }
 
+
+//====добавить элемент в таблицу====
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
-    if (linkedList[generatedHash].firstElem.value.key == "") {
+    if (linkedList[generatedHash].firstElem.value.key == "") { // если связный список пуст(есть только начальный элемент без ключа) -> ложим сюда
         linkedList[generatedHash].addFirstElem(definition);
-        engagedCells++;
+        engagedCells++; // увеличиваем к-во занятых ячеек
     }
     else{
-        linkedList[generatedHash].addElem(definition);
+        linkedList[generatedHash].addElem(definition); // для случая, если сгенерированный индекс указал на непустой связный список
     }
 }
 
+//======Очистить указатели на предыдущие значения=====
+void hashTable::clear(){
+    for (int i = 0; i < size; i++) {
+        if (linkedList[i].firstElem.pointer != NULL){
+            linkedList[i].clear();  // очищаем хэш-таблицу
+        }
+    }
+}
 
+//=====Переполнена ли таблица=====
+bool hashTable::is_overloaded(){
+    bool flag = false;
+    double fillIndex = 0.8; // индекс заполнения(80%)
+    if ((size*fillIndex) <= engagedCells) {
+        flag = true;
+    }
+    return flag;
+}
+
+//======Смена размера======
+void hashTable::resize(){
+    size *= 2; // удваиваем размер
+    linkedList = new List[size]; // выделяем для указателя нужное к-во списков
+    engagedCells = 0;  // анаулируем к-во занятых ячеек
+}
+
+//======Вывод======
 void hashTable::output(){
+    int num = 0;
     for (int i = 0; i < size; i++) {
         if (linkedList[i].firstElem.value.key != "") {
             int counter = 0;
             while (counter<linkedList[i].number) {
-                cout<<"Key is: "<<linkedList[i].get(counter).key<<endl;
-                cout<<"Definition is "<<linkedList[i].get(counter).definition<<endl;
+                cout<<num<<" Key is: "<<linkedList[i].get(counter).key<<endl;
+                cout<<" Definition is "<<linkedList[i].get(counter).definition<<endl;
+                num++;
                 counter++;
             }
             counter = 0;
@@ -45,6 +87,8 @@ void hashTable::output(){
     }
 }
 
+
+//======Найти элемент в таблице=====
 void hashTable::find(string term){
     int currentHash = generateHash(term);
     if (linkedList[currentHash].firstElem.value.key == "") {
@@ -72,6 +116,8 @@ void hashTable::find(string term){
     
 };
 
+
+//=======Подсчёт макс. количества коллизий в таблице=====
 void hashTable::calculateColisions(){
         int array[size];
         int max = array[0];

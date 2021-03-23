@@ -12,17 +12,7 @@
 
 ListElement::ListElement() {}
 
-ListElement::ListElement(word a, ListElement *p) {
-    value = a;
-    pointer = p;
-}
-
-
-
-
-List::List () {
-    
-}
+List::List () {}
 
 void List::addFirstElem (word a) { //добавление первого елемента в лист
     firstElem.value.key = a.key;
@@ -60,5 +50,5 @@ void List::delElem(ListElement *elem) {
     if (elem->pointer != NULL) {
         delElem(elem->pointer);
     }
-    delete elem;
+    delete elem->pointer;
 }
