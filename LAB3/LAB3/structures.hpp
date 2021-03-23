@@ -25,8 +25,10 @@ struct ListElement { //структура в которой хранится з�
     //void set (int a);
 };
 
-struct List{ //структура связного списка
+class List{ //клас связного списка
     ListElement firstElem;
+    void delElem(ListElement *elem);
+public:
     List();
     int number = 0;
     void addFirstElem (word a);
