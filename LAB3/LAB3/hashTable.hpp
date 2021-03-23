@@ -17,9 +17,10 @@ class hashTable{
     int engagedCells;
 public:
     int size;
-    hashTable(int lenght = 100000){
+    hashTable(int lenght){
         engagedCells = 0;
         size = lenght;
+        cout<<"New table of size "<<size<<" was created. Engaged cells are: "<<engagedCells<<"\n";
         linkedList = new List[size];
     };
     
@@ -33,9 +34,11 @@ public:
     
     bool is_overloaded(){
         bool flag = false;
-        int fillIndex = 0.8;
-        if (size*fillIndex <= engagedCells) {
+        double fillIndex = 0.8;
+        if ((size*fillIndex) == engagedCells) {
             flag = true;
+            cout<<"Eng cells: "<<engagedCells<<" - "<<flag<<endl;
+            cout<<"Size: "<<size<<endl;
         }
         return flag;
     }

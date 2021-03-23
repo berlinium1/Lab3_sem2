@@ -26,13 +26,13 @@ string readingCons () { //функция чтения с консоли
 }
 
 void readingFile (string teka, hashTable *mas) { //функция считывания словаря
-    hashTable res;
+    hashTable res(10000);
     int count = 0;
     ifstream inFile;
     inFile.open(teka);
     string line;
     word word;
-    int i;
+    int i = 0;
     if (inFile.is_open()) {
         while (!inFile.eof()) {
             if (res.is_overloaded()) {
@@ -40,8 +40,8 @@ void readingFile (string teka, hashTable *mas) { //функция считыва
                 inFile.open(teka);
                 res.resize();
                 cout<<i<<" - "<<res.size<<endl;
-                i++;
             }
+            i++;
             count++;
             word.key="";
             getline(inFile,line,'\n'); //читаем строку
