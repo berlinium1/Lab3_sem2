@@ -8,13 +8,11 @@
 #include "hashTable.hpp"
 
 
-hashTable::hashTable(){
-};
 ///при генерации хеша лучше учитывать умножение на простое число, что делает полученные хеши более разнообразными
 int hashTable::generateHash(string word){
         int hash = 0;
         for(int i = 0; i < word.size(); i++){
-            hash = (31 * hash + static_cast<int>(word[i])) % 98215;
+            hash = (31 * hash + static_cast<int>(word[i])) % size;
         }
         return hash;
 }
@@ -23,6 +21,7 @@ void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
     if (linkedList[generatedHash].firstElem.value.key == "") {
         linkedList[generatedHash].addFirstElem(definition);
+        engagedCells++;
     }
     else{
         linkedList[generatedHash].addElem(definition);

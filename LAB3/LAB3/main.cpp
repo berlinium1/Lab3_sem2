@@ -14,7 +14,7 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    hashTable table;
+    hashTable table(100);
     string path;
     cout<<"To start searching determinations You should give me a path to a dictionary-file\n";
     getline(cin, path);
@@ -24,11 +24,11 @@ int main(int argc, const char * argv[]) {
     
     do {
         cout<<"Enter your sentense or just a phrase please: "; getline(cin, userSentense);
-    userSentenseWords = getWordFromSentense(userSentense);
-    for (int i = 0; i<userSentenseWords.size(); i++) {
-        toLittle(&userSentenseWords[i]);
-        table.find(userSentenseWords[i]);
-    }
+        userSentenseWords = getWordFromSentense(userSentense);
+        for (int i = 0; i<userSentenseWords.size(); i++) {
+            toLittle(&userSentenseWords[i]);
+            table.find(userSentenseWords[i]);
+        }
     }while (userSentense != "");
     
 

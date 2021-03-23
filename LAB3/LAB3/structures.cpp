@@ -43,6 +43,7 @@ void List::addElem (word a) { //добавления елемента в кон�
     number++;
 }
 
+
 word List::get (int n) { //получения елемента с любым индексом
     ListElement *movingElem = &firstElem;
     for (int i=0; i<n; i++) {

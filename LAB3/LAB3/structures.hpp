@@ -31,6 +31,7 @@ struct List{ //структура связного списка
     int number = 0;
     void addFirstElem (word a);
     void addElem (word a);
+    void clear();
     word get(int n);
 };
 

@@ -32,8 +32,16 @@ void readingFile (string teka, hashTable *mas) { //функция считыва
     inFile.open(teka);
     string line;
     word word;
+    int i;
     if (inFile.is_open()) {
         while (!inFile.eof()) {
+            if (res.is_overloaded()) {
+                inFile.close();
+                inFile.open(teka);
+                res.resize();
+                cout<<i<<" - "<<res.size<<endl;
+                i++;
+            }
             count++;
             word.key="";
             getline(inFile,line,'\n'); //читаем строку
