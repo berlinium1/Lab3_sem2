@@ -34,12 +34,12 @@ void List::addElem (word a) { //добавления елемента в кон�
 }
 
 
-word List::get (int n) { //получения елемента с любым индексом
+word* List::get (int n) { //получения елемента с любым индексом
     ListElement *movingElem = &firstElem;
     for (int i=0; i<n; i++) {
         movingElem = movingElem->pointer;
     }
-    return movingElem->value;
+    return &movingElem->value;
 }
 
 void List::clear() {

@@ -32,7 +32,7 @@ public:
     void addFirstElem (word a);
     void addElem (word a);
     void clear();
-    word get(int n);
+    word* get(int n);
 };
 
 

@@ -41,9 +41,9 @@ void hashTable::push_back(word definition){
     else{
         for (int i = 0; i < linkedList[generatedHash].number; i++) {
             //cout<<"The word is "<<definition.definition<<endl;
-            if (definition.key == linkedList[generatedHash].get(i).key) {
-                linkedList[generatedHash].get(i).definition = linkedList[generatedHash].get(i).definition + " | " + definition.definition;
-                cout<<"The word is "<<definition.definition<<endl;
+            if (definition.key == linkedList[generatedHash].get(i)->key) {
+                linkedList[generatedHash].get(i)->definition = linkedList[generatedHash].get(i)->definition + "\n" + definition.definition;
+                //cout<<"The word is "<<linkedList[generatedHash].get(i)->definition<<endl;
                 flag = 1;
                 break;
             }
@@ -87,8 +87,8 @@ void hashTable::output(){
         if (linkedList[i].firstElem.value.key != "") {
             int counter = 0;
             while (counter<linkedList[i].number) {
-                cout<<num<<" Key is: "<<linkedList[i].get(counter).key<<endl;
-                cout<<" Definition is "<<linkedList[i].get(counter).definition<<endl;
+                cout<<num<<" Key is: "<<linkedList[i].get(counter)->key<<endl;
+                cout<<" Definition is "<<linkedList[i].get(counter)->definition<<endl;
                 num++;
                 counter++;
             }
@@ -112,8 +112,8 @@ void hashTable::find(string term){
         bool flag = 0;
         /// двигаемся в конец списка
         while (counter<linkedList[currentHash].number) {
-            if (linkedList[currentHash].get(counter).key == term) {
-                cout<<linkedList[currentHash].get(counter).key<<";"<<linkedList[currentHash].get(counter).definition<<endl;
+            if (linkedList[currentHash].get(counter)->key == term) {
+                cout<<linkedList[currentHash].get(counter)->key<<";"<<linkedList[currentHash].get(counter)->definition<<endl;
                 flag = 1;
                 break;
             }
