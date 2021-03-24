@@ -33,12 +33,23 @@ int hashTable::generateHash(string word){
 //====добавить элемент в таблицу====
 void hashTable::push_back(word definition){
     int generatedHash = generateHash(definition.key);
+    bool flag = 0;
     if (linkedList[generatedHash].firstElem.value.key == "") { // если связный список пуст(есть только начальный элемент без ключа) -> ложим сюда
         linkedList[generatedHash].addFirstElem(definition);
         engagedCells++; // увеличиваем к-во занятых ячеек
     }
     else{
-        linkedList[generatedHash].addElem(definition); // для случая, если сгенерированный индекс указал на непустой связный список
+        for (int i = 0; i < linkedList[i].number; i++) {
+            if (definition.key == linkedList[i].get(i).key) {
+                linkedList[i].get(i).definition = linkedList[i].get(i).definition + " | " + definition.definition;
+                cout<<"The word is "<<definition.definition<<endl;
+                flag = 1;
+                break;
+            }
+        }
+        if (!flag) {
+            linkedList[generatedHash].addElem(definition); // для случая, если сгенерированный индекс указал на непустой связный список
+        }
     }
 }
 
