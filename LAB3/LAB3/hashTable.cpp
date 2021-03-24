@@ -39,9 +39,10 @@ void hashTable::push_back(word definition){
         engagedCells++; // увеличиваем к-во занятых ячеек
     }
     else{
-        for (int i = 0; i < linkedList[i].number; i++) {
-            if (definition.key == linkedList[i].get(i).key) {
-                linkedList[i].get(i).definition = linkedList[i].get(i).definition + " | " + definition.definition;
+        for (int i = 0; i < linkedList[generatedHash].number; i++) {
+            //cout<<"The word is "<<definition.definition<<endl;
+            if (definition.key == linkedList[generatedHash].get(i).key) {
+                linkedList[generatedHash].get(i).definition = linkedList[generatedHash].get(i).definition + " | " + definition.definition;
                 cout<<"The word is "<<definition.definition<<endl;
                 flag = 1;
                 break;
